@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/public/build/tailwind.css" rel="stylesheet" />
+
+    <title>Tabs</title>
+  </head>
+  <body class="h-screen flex items-center justify-center bg-green-600">
+    <section
+      x-data="{id:1}"
+      class="w-128 flex flex-col items-center justify-center"
+    >
+      <section
+        class="bg-green-300 flex items-center justify-between w-full text-center p-1 rounded-lg"
+      >
+        <button
+          @click="id=1"
+          class="flex-grow py-2 px-4 cursor-pointer rounded-lg font-bold"
+          :class="id===1 ? 'bg-white text-green-500' : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
+        >
+          Recent
+        </button>
+        <button
+          @click="id=2"
+          class="flex-grow py-2 px-4 cursor-pointer rounded-lg font-bold"
+          :class="id===2 ? 'bg-white text-green-500' : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
+        >
+          Popular
+        </button>
+        <button
+          @click="id=3"
+          class="flex-grow py-2 px-4 cursor-pointer rounded-lg font-bold"
+          :class="id===3 ? 'bg-white text-green-500' : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
+        >
+          Trending
+        </button>
+      </section>
+      <section class="bg-white w-full mt-2 overflow-hidden rounded-lg">
+
+        <div
+          @click="id=1"
+          :class="id===1 ? 'block' : 'hidden' "
+          class="p-3 text-left"
+        >
+          <button
+            class="w-full my-2 hover:bg-gray-100 p-3 rounded-md text-left focus:ring-2 focus:ring-green-500"
+          >
+            <h3 class="font-bold">Does drinking coffee make you smarter?</h3>
+            <p>5h ago . 5 comments . 2 shares</p>
+          </button>
+          <button
+            class="w-full my-2 hover:bg-gray-100 p-2 rounded-md text-left focus:ring-2 focus:ring-green-500"
+          >
+            <h3 class="font-bold">So you've bought coffee... now what?</h3>
+            <p>5h ago . 5 comments . 2 shares</p>
+          </button>
+        </div>
+
+        <div
+          @click="id=2"
+          :class="id===2 ? 'block' : 'hidden' "
+          class="p-3 text-left"
+        >
+          <button
+            class="w-full my-2 hover:bg-gray-100 p-3 rounded-md text-left focus:ring-2 focus:ring-green-500"
+          >
+            <h3 class="font-bold">Is tech making coffee better or worse?</h3>
+            <p>7h ago . 7 comments . 4 shares</p>
+          </button>
+          <button
+            class="w-full my-2 hover:bg-gray-100 p-2 rounded-md text-left focus:ring-2 focus:ring-green-500"
+          >
+            <h3 class="font-bold">The most innovative things happening in coffee</h3>
+            <p>7h ago . 7 comments . 4 shares</p>
+          </button>
+        </div>
+
+        <div
+          @click="id=3"
+          :class="id===3 ? 'block' : 'hidden' "
+          class="p-3 text-left"
+        >
+          <button
+            class="w-full my-2 hover:bg-gray-100 p-3 rounded-md text-left focus:ring-2 focus:ring-green-500"
+          >
+          <h3 class="font-bold">Ask Me Anything: 10 answers to your questions about coffee</h3>
+          <p>9h ago . 9 comments . 3 shares</p>
+          </button>
+          <button
+            class="w-full my-2 hover:bg-gray-100 p-2 rounded-md text-left focus:ring-2 focus:ring-green-500"
+          >
+          <h3 class="font-bold">The worst advice we've ever heard about coffee</h3>
+          <p>9h ago . 9 comments . 3 shares</p>
+          </button>
+        </div>
+
+      </section>
+    </section>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
+
+
