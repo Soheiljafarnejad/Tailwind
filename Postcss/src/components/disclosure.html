@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/public/build/tailwind.css" rel="stylesheet" />
+    <title>Disclosure</title>
+  </head>
+  <body class="flex items-center justify-center h-screen bg-purple-700">
+    <section class="bg-white w-128 p-4 rounded-xl">
+      <div x-data="{tabOne:false}" class="disclosure my-2">
+        <div
+          @click="tabOne=!tabOne"
+          class="flex items-center justify-between bg-purple-200 text-purple-700 p-2 rounded-lg cursor-pointer"
+        >
+          <p>What is your refund policy?</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            :class="tabOne ? 'rotate-180' : '' "
+            class="h-5 w-5 transition-all duration-500"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          :class="tabOne ? 'h-auto opacity-1' : 'h-0 opacity-0' "
+          class="overflow-hidden px-3 pt-2 transition-all duration-1000"
+        >
+          If you're unhappy with your purchase for any reason, email us within
+          90 days and we'll refund you in full, no questions asked.
+        </div>
+      </div>
+
+      <div x-data="{tabTow:false}" class="disclosure my-2">
+        <div
+          @click="tabTow=!tabTow"
+          class="flex items-center justify-between bg-purple-200 text-purple-700 p-2 rounded-lg cursor-pointer"
+        >
+          <p>Do you offer technical support?</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            :class="tabTow ? 'rotate-180' : '' "
+            class="h-5 w-5 transition-all duration-500"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          :class="tabTow ? 'h-auto opacity-1' : 'h-0 opacity-0' "
+          class="overflow-hidden px-3 pt-2 transition-all duration-1000"
+        >
+          NO.
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="//unpkg.com/alpinejs" defer></script>
+</html>
