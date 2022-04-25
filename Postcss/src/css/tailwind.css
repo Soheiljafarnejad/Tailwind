@@ -4,7 +4,7 @@
 
 @layer components {
   .radio-checked:checked + label {
-    @apply bg-blue-400 ring-4 ring-blue-300 text-white;
+    @apply bg-sky-900 bg-opacity-75 text-white;
   }
   .radio-checked:checked + label .icon-box {
     @apply flex;

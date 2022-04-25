@@ -10,7 +10,7 @@
   </head>
   <body class="h-screen flex items-center justify-center bg-green-600">
     <section
-      x-data="{id:1}"
+      x-data="{id:1,activeLink:'bg-white text-green-500 focus:ring-2 ring-offset-2 focus:ring-offset-green-300 focus:ring-white'}"
       class="w-128 flex flex-col items-center justify-center"
     >
       <section
@@ -19,32 +19,27 @@
         <button
           @click="id=1"
           class="flex-grow py-2 px-4 cursor-pointer rounded-lg font-bold"
-          :class="id===1 ? 'bg-white text-green-500' : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
+          :class="id===1 ? activeLink : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
         >
           Recent
         </button>
         <button
           @click="id=2"
           class="flex-grow py-2 px-4 cursor-pointer rounded-lg font-bold"
-          :class="id===2 ? 'bg-white text-green-500' : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
+          :class="id===2 ? activeLink : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
         >
           Popular
         </button>
         <button
           @click="id=3"
           class="flex-grow py-2 px-4 cursor-pointer rounded-lg font-bold"
-          :class="id===3 ? 'bg-white text-green-500' : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
+          :class="id===3 ? activeLink : 'hover:bg-green-200 text-slate-100 hover:bg-opacity-40' "
         >
           Trending
         </button>
       </section>
       <section class="bg-white w-full mt-2 overflow-hidden rounded-lg">
-
-        <div
-          @click="id=1"
-          :class="id===1 ? 'block' : 'hidden' "
-          class="p-3 text-left"
-        >
+        <div @click="id=1" x-show="id===1" class="p-3 text-left">
           <button
             class="w-full my-2 hover:bg-gray-100 p-3 rounded-md text-left focus:ring-2 focus:ring-green-500"
           >
@@ -59,11 +54,7 @@
           </button>
         </div>
 
-        <div
-          @click="id=2"
-          :class="id===2 ? 'block' : 'hidden' "
-          class="p-3 text-left"
-        >
+        <div @click="id=2" x-show="id===2" class="p-3 text-left">
           <button
             class="w-full my-2 hover:bg-gray-100 p-3 rounded-md text-left focus:ring-2 focus:ring-green-500"
           >
@@ -73,34 +64,33 @@
           <button
             class="w-full my-2 hover:bg-gray-100 p-2 rounded-md text-left focus:ring-2 focus:ring-green-500"
           >
-            <h3 class="font-bold">The most innovative things happening in coffee</h3>
+            <h3 class="font-bold">
+              The most innovative things happening in coffee
+            </h3>
             <p>7h ago . 7 comments . 4 shares</p>
           </button>
         </div>
 
-        <div
-          @click="id=3"
-          :class="id===3 ? 'block' : 'hidden' "
-          class="p-3 text-left"
-        >
+        <div @click="id=3" x-show="id===3" class="p-3 text-left">
           <button
             class="w-full my-2 hover:bg-gray-100 p-3 rounded-md text-left focus:ring-2 focus:ring-green-500"
           >
-          <h3 class="font-bold">Ask Me Anything: 10 answers to your questions about coffee</h3>
-          <p>9h ago . 9 comments . 3 shares</p>
+            <h3 class="font-bold">
+              Ask Me Anything: 10 answers to your questions about coffee
+            </h3>
+            <p>9h ago . 9 comments . 3 shares</p>
           </button>
           <button
             class="w-full my-2 hover:bg-gray-100 p-2 rounded-md text-left focus:ring-2 focus:ring-green-500"
           >
-          <h3 class="font-bold">The worst advice we've ever heard about coffee</h3>
-          <p>9h ago . 9 comments . 3 shares</p>
+            <h3 class="font-bold">
+              The worst advice we've ever heard about coffee
+            </h3>
+            <p>9h ago . 9 comments . 3 shares</p>
           </button>
         </div>
-
       </section>
     </section>
     <script src="//unpkg.com/alpinejs" defer></script>
   </body>
 </html>
-
-
