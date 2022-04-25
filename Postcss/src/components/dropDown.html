@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/public/build/tailwind.css" rel="stylesheet" />
+    <title>drop down</title>
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="relative">
+      <button
+        id="backdrop"
+        class="fixed inset-0 bg-gray-300 hidden opacity-60"
+      ></button>
+      <button
+        class="bg-blue-500 text-white px-3 py-2 rounded-lg flex items-center outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white z-10 relative"
+        id="button"
+      >
+        <span>Show more</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 ml-2"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div
+        class="bg-white w-56 mt-2 rounded-lg overflow-hidden border border-gray-200 absolute left-0 hidden"
+        id="drop"
+      >
+        <a
+          href="https://heroicons.com/"
+          class="block p-2 hover:bg-gray-100 cursor-pointer"
+          >Account</a
+        >
+        <a
+          href="https://heroicons.com/"
+          class="block p-2 hover:bg-gray-100 cursor-pointer"
+          >Support</a
+        >
+        <a
+          href="https://heroicons.com/"
+          class="block p-2 hover:bg-gray-100 cursor-pointer"
+          >Setting</a
+        >
+      </div>
+    </div>
+
+    <script>
+      const button = document.getElementById("button");
+      const drop = document.getElementById("drop");
+      const backdrop = document.getElementById("backdrop");
+
+      button.addEventListener("click", () => {
+        drop.classList.toggle("hidden");
+        drop.classList.toggle("block");
+
+        backdrop.classList.toggle("hidden");
+        backdrop.classList.toggle("block");
+      });
+
+      backdrop.addEventListener("click", () => {
+        drop.classList.add("hidden");
+        backdrop.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
